@@ -38,21 +38,23 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
      */
     private $metrics;
     /**
-     * The filter clause of dimensions. Metrics cannot be used in this filter.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
      */
     private $dimension_filter = null;
     /**
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
      */
     private $metric_filter = null;
     /**
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 250,000 rows per request, no matter how many you
+     * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`. For instance, there are
@@ -111,13 +113,15 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
      *     @type array<\Google\Analytics\Data\V1beta\Metric>|\Google\Protobuf\Internal\RepeatedField $metrics
      *           The metrics requested and displayed.
      *     @type \Google\Analytics\Data\V1beta\FilterExpression $dimension_filter
-     *           The filter clause of dimensions. Metrics cannot be used in this filter.
+     *           The filter clause of dimensions. Dimensions must be requested to be used in
+     *           this filter. Metrics cannot be used in this filter.
      *     @type \Google\Analytics\Data\V1beta\FilterExpression $metric_filter
      *           The filter clause of metrics. Applied at post aggregation phase, similar to
-     *           SQL having-clause. Dimensions cannot be used in this filter.
+     *           SQL having-clause. Metrics must be requested to be used in this filter.
+     *           Dimensions cannot be used in this filter.
      *     @type int|string $limit
      *           The number of rows to return. If unspecified, 10,000 rows are returned. The
-     *           API returns a maximum of 250,000 rows per request, no matter how many you
+     *           API returns a maximum of 100,000 rows per request, no matter how many you
      *           ask for. `limit` must be positive.
      *           The API can also return fewer rows than the requested `limit`, if there
      *           aren't as many dimension values as the `limit`. For instance, there are
@@ -232,7 +236,8 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The filter clause of dimensions. Metrics cannot be used in this filter.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
      * @return \Google\Analytics\Data\V1beta\FilterExpression|null
@@ -253,7 +258,8 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The filter clause of dimensions. Metrics cannot be used in this filter.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
      * @param \Google\Analytics\Data\V1beta\FilterExpression $var
@@ -269,7 +275,8 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
      * @return \Google\Analytics\Data\V1beta\FilterExpression|null
@@ -291,7 +298,8 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
      * @param \Google\Analytics\Data\V1beta\FilterExpression $var
@@ -307,7 +315,7 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 250,000 rows per request, no matter how many you
+     * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`. For instance, there are
@@ -325,7 +333,7 @@ class RunRealtimeReportRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 250,000 rows per request, no matter how many you
+     * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`. For instance, there are

@@ -18,15 +18,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
     /**
      * If true, indicates some buckets of dimension combinations are rolled into
      * "(other)" row. This can happen for high cardinality reports.
-     * The metadata parameter dataLossFromOtherRow is populated based on the
-     * aggregated data table used in the report. The parameter will be accurately
-     * populated regardless of the filters and limits in the report.
-     * For example, the (other) row could be dropped from the report because the
-     * request contains a filter on sessionSource = google. This parameter will
-     * still be populated if data loss from other row was present in the input
-     * aggregate data used to generate this report.
-     * To learn more, see [About the (other) row and data
-     * sampling](https://support.google.com/analytics/answer/13208658#reports).
      *
      * Generated from protobuf field <code>bool data_loss_from_other_row = 3;</code>
      */
@@ -68,19 +59,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional string empty_reason = 7;</code>
      */
     private $empty_reason = null;
-    /**
-     * If `subjectToThresholding` is true, this report is subject to thresholding
-     * and only returns data that meets the minimum aggregation thresholds. It is
-     * possible for a request to be subject to thresholding thresholding and no
-     * data is absent from the report, and this happens when all data is above the
-     * thresholds. To learn more, see [Data
-     * thresholds](https://support.google.com/analytics/answer/9383630) and [About
-     * Demographics and
-     * Interests](https://support.google.com/analytics/answer/2799357).
-     *
-     * Generated from protobuf field <code>optional bool subject_to_thresholding = 8;</code>
-     */
-    private $subject_to_thresholding = null;
 
     /**
      * Constructor.
@@ -91,15 +69,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
      *     @type bool $data_loss_from_other_row
      *           If true, indicates some buckets of dimension combinations are rolled into
      *           "(other)" row. This can happen for high cardinality reports.
-     *           The metadata parameter dataLossFromOtherRow is populated based on the
-     *           aggregated data table used in the report. The parameter will be accurately
-     *           populated regardless of the filters and limits in the report.
-     *           For example, the (other) row could be dropped from the report because the
-     *           request contains a filter on sessionSource = google. This parameter will
-     *           still be populated if data loss from other row was present in the input
-     *           aggregate data used to generate this report.
-     *           To learn more, see [About the (other) row and data
-     *           sampling](https://support.google.com/analytics/answer/13208658#reports).
      *     @type \Google\Analytics\Data\V1beta\ResponseMetaData\SchemaRestrictionResponse $schema_restriction_response
      *           Describes the schema restrictions actively enforced in creating this
      *           report. To learn more, see [Access and data-restriction
@@ -121,15 +90,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
      *           "America/New_York" or "Asia/Tokyo".
      *     @type string $empty_reason
      *           If empty reason is specified, the report is empty for this reason.
-     *     @type bool $subject_to_thresholding
-     *           If `subjectToThresholding` is true, this report is subject to thresholding
-     *           and only returns data that meets the minimum aggregation thresholds. It is
-     *           possible for a request to be subject to thresholding thresholding and no
-     *           data is absent from the report, and this happens when all data is above the
-     *           thresholds. To learn more, see [Data
-     *           thresholds](https://support.google.com/analytics/answer/9383630) and [About
-     *           Demographics and
-     *           Interests](https://support.google.com/analytics/answer/2799357).
      * }
      */
     public function __construct($data = NULL) {
@@ -140,15 +100,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
     /**
      * If true, indicates some buckets of dimension combinations are rolled into
      * "(other)" row. This can happen for high cardinality reports.
-     * The metadata parameter dataLossFromOtherRow is populated based on the
-     * aggregated data table used in the report. The parameter will be accurately
-     * populated regardless of the filters and limits in the report.
-     * For example, the (other) row could be dropped from the report because the
-     * request contains a filter on sessionSource = google. This parameter will
-     * still be populated if data loss from other row was present in the input
-     * aggregate data used to generate this report.
-     * To learn more, see [About the (other) row and data
-     * sampling](https://support.google.com/analytics/answer/13208658#reports).
      *
      * Generated from protobuf field <code>bool data_loss_from_other_row = 3;</code>
      * @return bool
@@ -161,15 +112,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
     /**
      * If true, indicates some buckets of dimension combinations are rolled into
      * "(other)" row. This can happen for high cardinality reports.
-     * The metadata parameter dataLossFromOtherRow is populated based on the
-     * aggregated data table used in the report. The parameter will be accurately
-     * populated regardless of the filters and limits in the report.
-     * For example, the (other) row could be dropped from the report because the
-     * request contains a filter on sessionSource = google. This parameter will
-     * still be populated if data loss from other row was present in the input
-     * aggregate data used to generate this report.
-     * To learn more, see [About the (other) row and data
-     * sampling](https://support.google.com/analytics/answer/13208658#reports).
      *
      * Generated from protobuf field <code>bool data_loss_from_other_row = 3;</code>
      * @param bool $var
@@ -349,56 +291,6 @@ class ResponseMetaData extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->empty_reason = $var;
-
-        return $this;
-    }
-
-    /**
-     * If `subjectToThresholding` is true, this report is subject to thresholding
-     * and only returns data that meets the minimum aggregation thresholds. It is
-     * possible for a request to be subject to thresholding thresholding and no
-     * data is absent from the report, and this happens when all data is above the
-     * thresholds. To learn more, see [Data
-     * thresholds](https://support.google.com/analytics/answer/9383630) and [About
-     * Demographics and
-     * Interests](https://support.google.com/analytics/answer/2799357).
-     *
-     * Generated from protobuf field <code>optional bool subject_to_thresholding = 8;</code>
-     * @return bool
-     */
-    public function getSubjectToThresholding()
-    {
-        return isset($this->subject_to_thresholding) ? $this->subject_to_thresholding : false;
-    }
-
-    public function hasSubjectToThresholding()
-    {
-        return isset($this->subject_to_thresholding);
-    }
-
-    public function clearSubjectToThresholding()
-    {
-        unset($this->subject_to_thresholding);
-    }
-
-    /**
-     * If `subjectToThresholding` is true, this report is subject to thresholding
-     * and only returns data that meets the minimum aggregation thresholds. It is
-     * possible for a request to be subject to thresholding thresholding and no
-     * data is absent from the report, and this happens when all data is above the
-     * thresholds. To learn more, see [Data
-     * thresholds](https://support.google.com/analytics/answer/9383630) and [About
-     * Demographics and
-     * Interests](https://support.google.com/analytics/answer/2799357).
-     *
-     * Generated from protobuf field <code>optional bool subject_to_thresholding = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setSubjectToThresholding($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->subject_to_thresholding = $var;
 
         return $this;
     }
