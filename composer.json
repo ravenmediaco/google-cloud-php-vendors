@@ -1,0 +1,15 @@
+{
+    "name": "your-username/google-cloud-php-vendors",
+    "description": "Google Cloud PHP dependencies",
+    "type": "library",
+    "require": {
+        "google/analytics-data": "^0.11"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your-email@example.com"
+        }
+    ]
+}
